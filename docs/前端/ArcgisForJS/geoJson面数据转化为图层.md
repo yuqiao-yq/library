@@ -40,4 +40,4 @@ const getGeoJsonLayer = async function (data) {
 };
 ```
 
-<code src="../../../src/components/frontend/visualization/ArcgisForJS/geojsonToPolygon/index.jsx" compact="true" desc="移动或缩放地图展示地图信息"></code>
+<code src="@/components/frontend/visualization/ArcgisForJS/geojsonToPolygon/index.jsx" compact="true" desc="移动或缩放地图展示地图信息"></code>

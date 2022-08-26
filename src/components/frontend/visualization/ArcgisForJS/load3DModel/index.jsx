@@ -6,6 +6,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { loadModules } from 'esri-loader';
+import './index.css';
 /**
  * @description: 初始化map方法
  * @param {*}
@@ -13,12 +14,7 @@ import { loadModules } from 'esri-loader';
  */
 let initMapFunction = function () {
   return loadModules(
-    [
-      'esri/Map',
-      'esri/layers/SceneLayer',
-      'esri/views/SceneView',
-      'esri/config',
-    ],
+    ['esri/Map', 'esri/layers/SceneLayer', 'esri/views/SceneView', 'esri/config'],
     {
       url: `https://js.arcgis.com/4.23/`, // 要用绝对路径，这是托管在本地服务器上的地址
       css: `https://js.arcgis.com/4.23/esri/themes/dark/main.css`, // css样式

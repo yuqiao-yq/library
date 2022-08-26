@@ -6,6 +6,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadModules } from 'esri-loader';
 import 点数据 from './点数据.json';
+import './index.css';
 
 // 点数据.features = 点数据.features.map((item, key) => {
 //   item.id = key;
@@ -41,12 +42,7 @@ import 点数据 from './点数据.json';
  */
 var initMapFunction = async function () {
   return loadModules(
-    [
-      'esri/Map',
-      'esri/views/MapView',
-      'esri/layers/GeoJSONLayer',
-      'esri/config',
-    ],
+    ['esri/Map', 'esri/views/MapView', 'esri/layers/GeoJSONLayer', 'esri/config'],
     {
       url: `https://js.arcgis.com/4.23/`,
       css: `https://js.arcgis.com/4.23/esri/themes/dark/main.css`,

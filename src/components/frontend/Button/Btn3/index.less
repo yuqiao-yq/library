@@ -1,0 +1,45 @@
+.container {
+  padding: 20px;
+  background-color: #14213d;
+  .btn {
+    // outline: 4px solid #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: #0ebeff;
+    font-size: 24px;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+  }
+  .btn::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    width: 200%;
+    height: 200%;
+    background-color: #0ebeff;
+    transform-origin: 0 0;
+    animation: rotate 3s infinite linear;
+    content: ''; //以左上角为圆心；
+  }
+  // 旋转一圈的动画
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  .btn::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background-color: #008c8c;
+    background-color: #000;
+    border-radius: 10px;
+    content: '';
+  }
+}
