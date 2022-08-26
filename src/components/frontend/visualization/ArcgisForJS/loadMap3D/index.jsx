@@ -6,6 +6,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { loadModules } from 'esri-loader';
+import './index.css';
 /**
  * @description: 初始化map方法
  * @param {*}
