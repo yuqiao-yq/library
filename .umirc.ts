@@ -25,16 +25,18 @@ export default defineConfig({
     // },
   },
   // more config: https://d.umijs.org/config
-  // resolve: {
   alias: {
     '@': resolve(__dirname, './src'),
   },
-  // },
   navs: [
     null, // null 值代表保留约定式生成的导航，只做增量配置
+    // {
+    //   title: '前端',
+    //   path: '/前端/java-script/变量&常量',
+    // },
     {
-      title: 'GitHub',
-      path: 'https://github.com/umijs/dumi',
+      title: 'Gitee',
+      path: 'https://gitee.com/joe1207427994',
     },
     {
       title: '我有二级导航',
@@ -46,4 +48,21 @@ export default defineConfig({
       ],
     },
   ],
+  menus: {
+    // 需要自定义侧边菜单的路径，没有配置的路径还是会使用自动生成的配置
+    '/前端1': [
+      {
+        title: '前端1',
+        path: '/前端1',
+        children: [
+          // 菜单子项（可选）
+          // 'guide/index.md', // 对应的 Markdown 文件，路径是相对于 resolve.includes 目录识别的
+        ],
+      },
+    ],
+    // 如果该路径有其他语言，需在前面加上语言前缀，需与 locales 配置中的路径一致
+    '/zh-CN/前端': [
+      // 省略，配置同上
+    ],
+  },
 });

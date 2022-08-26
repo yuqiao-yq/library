@@ -23,8 +23,7 @@ ArcGIS JS API 其实是 ArcGIS 这个软件对外提供的 API(其实就是一�
 
 ## 竞品
 
-<Alert type="info">目前主要竞品有 [leafletjs](https://leafletjs.com/) 、 [openlayers](https://openlayers.org/)、[maptalks](https://maptalks.org/)、[cesium](https://cesium.com/)等
-</Alert>
+<Alert type="info">目前主要竞品有 [leafletjs](https://leafletjs.com/) 、 [openlayers](https://openlayers.org/)、[maptalks](https://maptalks.org/)、[cesium](https://cesium.com/)等 </Alert>
 
 ## 快速上手
 
