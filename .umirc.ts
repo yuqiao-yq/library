@@ -39,12 +39,12 @@ export default defineConfig({
       path: 'https://gitee.com/joe1207427994',
     },
     {
-      title: '我有二级导航',
+      title: '更多',
       path: '链接是可选的',
       // 可通过如下形式嵌套二级导航菜单，目前暂不支持更多层级嵌套：
       children: [
-        { title: '第一项', path: 'https://d.umijs.org' },
-        { title: '第二项', path: '/guide' },
+        { title: 'dumi', path: 'https://d.umijs.org' },
+        { title: '待定', path: '/guide' },
       ],
     },
   ],
