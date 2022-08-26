@@ -1,22 +1,22 @@
 // @ts-nocheck
 import React from 'react';
 import './iconfont.js';
-import './index.less';
+import style from './index.less';
 
 export default function index() {
   return (
-    <div className="container">
+    <div className={style.container}>
       <h3>btn2</h3>
-      <div className="Btn2">
-        <div className="items">
+      <div className={style.Btn2}>
+        <div className={style.items}>
           <a>
-            <div className="content">
+            <div className={style.content}>
               <i></i>
               <i></i>
               <i></i>
               <i></i>
               <i>
-                <svg className="icon" aria-hidden="true">
+                <svg className={style.icon} aria-hidden="true">
                   <use xlinkHref="#iconvue"></use>
                 </svg>
               </i>
@@ -24,15 +24,15 @@ export default function index() {
             <p>Vue</p>
           </a>
         </div>
-        <div className="items">
+        <div className={style.items}>
           <a>
-            <div className="content">
+            <div className={style.content}>
               <i></i>
               <i></i>
               <i></i>
               <i></i>
               <i>
-                <svg className="icon" aria-hidden="true">
+                <svg className={style.icon} aria-hidden="true">
                   <use xlinkHref="#iconmusic"></use>
                 </svg>
               </i>
@@ -40,15 +40,15 @@ export default function index() {
             <p>Music</p>
           </a>
         </div>
-        <div className="items">
+        <div className={style.items}>
           <a>
-            <div className="content">
+            <div className={style.content}>
               <i></i>
               <i></i>
               <i></i>
               <i></i>
               <i>
-                <svg className="icon" aria-hidden="true">
+                <svg className={style.icon} aria-hidden="true">
                   <use xlinkHref="#iconvideo"></use>
                 </svg>
               </i>
@@ -56,15 +56,15 @@ export default function index() {
             <p>Video</p>
           </a>
         </div>
-        <div className="items">
+        <div className={style.items}>
           <a>
-            <div className="content">
+            <div className={style.content}>
               <i></i>
               <i></i>
               <i></i>
               <i></i>
               <i>
-                <svg className="icon" aria-hidden="true">
+                <svg className={style.icon} aria-hidden="true">
                   <use xlinkHref="#iconpic"></use>
                 </svg>
               </i>
