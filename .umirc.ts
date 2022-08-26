@@ -11,7 +11,7 @@ export default defineConfig({
   mode: 'site',
   hash: true,
   history: { type: 'hash' },
-  base: '/statics',
+  // base: '/statics',
   publicPath: './',
   locales: [['zh-CN', '中文']],
   proxy: {
