@@ -1,5 +1,5 @@
 ---
-title: comps
+title: Button
 order: 2
 # sidemenu: true
 # nav:
