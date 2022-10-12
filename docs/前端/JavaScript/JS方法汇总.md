@@ -558,6 +558,39 @@ console.log(check(str2)); // false
 console.log(check(str3)); // false
 ```
 
+### 全排列
+
+```js
+/**
+ *
+ * @param {[]} list 需要全排列的数组
+ * @param {number} k 当前递归的数组的第一个元素下标
+ * @param {number} m 数组长度-1
+ */
+const getFullPerm = (list, k, m) => {
+  let res = [];
+  const fullPerm = (list, k, m) => {
+    if (k == m) {
+      // console.log(list);
+      res.push([...list]);
+    } else {
+      for (var i = k; i <= m; i++) {
+        //swap k and i
+        var t = list[k];
+        list[k] = list[i];
+        list[i] = t;
+        //recursion
+        fullPerm(list, k + 1, m);
+        list[i] = list[k];
+        list[k] = t;
+      }
+    }
+  };
+  fullPerm(list, k, m);
+  return res;
+};
+```
+
 ### 检验字符串是否是回文
 
 ```js
