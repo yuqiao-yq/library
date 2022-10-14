@@ -1,6 +1,6 @@
 ---
 title: TS对象
-order: 6
+order:
 toc: content
 ---
 
