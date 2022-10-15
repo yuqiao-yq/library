@@ -1,13 +1,14 @@
 ---
+order: 3
 nav:
-  title: Components
-  path: cps
-      children: [
-        { title: 'waterMark', path: '/waterMark' }
-      ]
+  # title: Components
+  # path: cps
+  # children: [
+  #   { title: 'waterMark', path: '/waterMark' }
+  # ]
 ---
 
-## WaterMarkButto
+## WaterMark
 
 Demo:
 
