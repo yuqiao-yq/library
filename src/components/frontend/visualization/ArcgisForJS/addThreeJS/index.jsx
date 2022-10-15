@@ -7,6 +7,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadModules } from 'esri-loader';
 import * as THREE from 'three';
+import './index.css';
 /**
  * @description: 初始化map方法
  * @param {*}
@@ -26,29 +27,20 @@ let initMapFunction = function () {
       url: `https://js.arcgis.com/4.23/`,
       css: `https://js.arcgis.com/4.23/esri/themes/dark/main.css`,
     },
-  ).then(
-    async ([
+  ).then(async ([Map, MapImageLayer, TileLayer, SceneLayer, SceneView, externalRenderers]) => {
+    const MapFunction = {
       Map,
       MapImageLayer,
       TileLayer,
       SceneLayer,
       SceneView,
       externalRenderers,
-    ]) => {
-      const MapFunction = {
-        Map,
-        MapImageLayer,
-        TileLayer,
-        SceneLayer,
-        SceneView,
-        externalRenderers,
-      };
-      initMapFunction = function () {
-        return MapFunction;
-      };
+    };
+    initMapFunction = function () {
       return MapFunction;
-    },
-  );
+    };
+    return MapFunction;
+  });
 };
 
 /**
@@ -109,9 +101,7 @@ const Map3D = () => {
 
           // ArcGIS JS API渲染自定义离屏缓冲区，而不是默认的帧缓冲区。
           // 我们必须将这段代码注入到three.js运行时中，以便绑定这些缓冲区而不是默认的缓冲区。
-          const originalSetRenderTarget = this.renderer.setRenderTarget.bind(
-            this.renderer,
-          );
+          const originalSetRenderTarget = this.renderer.setRenderTarget.bind(this.renderer);
           this.renderer.setRenderTarget = function (target) {
             originalSetRenderTarget(target);
             if (target == null) {
@@ -137,9 +127,7 @@ const Map3D = () => {
           const cam = context.camera;
           this.camera.position.set(cam.eye[0], cam.eye[1], cam.eye[2]);
           this.camera.up.set(cam.up[0], cam.up[1], cam.up[2]);
-          this.camera.lookAt(
-            new THREE.Vector3(cam.center[0], cam.center[1], cam.center[2]),
-          );
+          this.camera.lookAt(new THREE.Vector3(cam.center[0], cam.center[1], cam.center[2]));
           // 投影矩阵可以直接复制
           this.camera.projectionMatrix.fromArray(cam.projectionMatrix);
           // 绘制场景

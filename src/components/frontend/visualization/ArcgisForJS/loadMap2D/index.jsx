@@ -6,6 +6,7 @@
 import React, { useEffect, useState } from 'react';
 // 先安装 arcgis 官方依赖 esri-loader；这个只是开发依赖,因此可以使用命令 npm i esri-loader --save-dev 来安装;
 import { loadModules } from 'esri-loader'; // 用模块的方式引入 esri-loader;
+import './index.css';
 /**
  * @description: 初始化map方法
  * @param {*}
@@ -27,21 +28,19 @@ let initMapFunction = function () {
       url: `https://js.arcgis.com/4.23/`, // 要用绝对路径，这是托管在本地服务器上的地址
       css: `https://js.arcgis.com/4.23/esri/themes/dark/main.css`, // css样式
     },
-  ).then(
-    async ([Map, MapImageLayer, TileLayer, MapView, SceneView, esriConfig]) => {
-      const MapFunction = {
-        Map,
-        MapImageLayer,
-        TileLayer,
-        SceneView,
-        MapView,
-      };
-      initMapFunction = function () {
-        return MapFunction;
-      };
+  ).then(async ([Map, MapImageLayer, TileLayer, MapView, SceneView, esriConfig]) => {
+    const MapFunction = {
+      Map,
+      MapImageLayer,
+      TileLayer,
+      SceneView,
+      MapView,
+    };
+    initMapFunction = function () {
       return MapFunction;
-    },
-  );
+    };
+    return MapFunction;
+  });
 };
 
 /**

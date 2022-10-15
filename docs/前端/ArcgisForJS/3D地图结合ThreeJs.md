@@ -72,4 +72,4 @@ const Map3D = () => {
 export default Map3D;
 ```
 
-<code src="../../../src/components/frontend/visualization/ArcgisForJS/addThreeJS/index.jsx" compact="true" desc="移动或缩放地图展示地图信息"></code>
+<code src="@/components/frontend/visualization/ArcgisForJS/addThreeJS/index.jsx" compact="true" desc="移动或缩放地图展示地图信息"></code>

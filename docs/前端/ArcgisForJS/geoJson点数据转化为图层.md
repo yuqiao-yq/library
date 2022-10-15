@@ -116,4 +116,4 @@ const Map2D = () => {
 export default Map2D;
 ```
 
-<code src="../../../src/components/frontend/visualization/ArcgisForJS/geojsonToPoint/index.jsx" compact="true" desc="移动或缩放地图展示地图信息"></code>
+<code src="@/components/frontend/visualization/ArcgisForJS/geojsonToPoint/index.jsx" compact="true" desc="移动或缩放地图展示地图信息"></code>
