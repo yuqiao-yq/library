@@ -1,6 +1,6 @@
 ---
 title: TypeScript模块
-order: 8
+order: 13
 toc: content
 ---
 
