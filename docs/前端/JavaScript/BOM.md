@@ -2,8 +2,14 @@
 title: BOM（浏览器对象模型）
 order: 11
 toc: content
----
-
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /JavaScript
+  title: JavaScript
+  order: 1
 ---
 
 BOM（浏览器对象模型）是一个用于访问浏览器和计算机屏幕的对象集合。我们可以通过全局对象 window 来访问这些对象。

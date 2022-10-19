@@ -2,13 +2,15 @@
 title: geoJson 点数据转化为图层
 order: 4
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /ArcGIS
+  title: ArcGIS
+  order: 6
 ---
-
-<!--
- * @Descripttion:
- * @Date: 2022-05-29 23:06:30
- * @LastEditTime: 2022-06-14 11:27:34
--->
 
 ## geoJson 点数据转化为图层
 

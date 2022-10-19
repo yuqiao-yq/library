@@ -29,22 +29,49 @@ export default defineConfig({
     '@': resolve(__dirname, './src'),
   },
   navs: [
-    null, // null 值代表保留约定式生成的导航，只做增量配置
-    // {
-    //   title: '前端',
-    //   path: '/前端/java-script/变量&常量',
-    // },
+    // null, // null 值代表保留约定式生成的导航，只做增量配置
     {
-      title: 'Gitee',
-      path: 'https://gitee.com/joe1207427994',
+      title: '前端',
+      path: '/frontend',
+      children: [
+        { title: 'JS', path: '/frontend/JavaScript' },
+        { title: 'ArcGIS', path: '/frontend/ArcGIS' },
+        { title: '网络', path: '/frontend/web' },
+        { title: '组件', path: '/components' },
+        { title: 'Tools', path: '/tools' },
+      ],
+    },
+    {
+      title: '后端',
+      path: '/backend',
+      children: [
+        { title: 'SQL', path: '/backend/sql' },
+        { title: 'Java', path: '/backend/Java' },
+        { title: 'Python', path: '/backend/Python' },
+      ],
+    },
+    {
+      title: '计算机',
+      path: '/computer',
+      children: [
+        { title: '数据结构&算法', path: '/computer/数据结构&算法' },
+        // { title: '算法题', path: '/computer/数据结构&算法/算法题' },
+        { title: '操作系统', path: '/computer/操作系统' },
+        { title: '计算机组成原理', path: '/computer/计算机组成原理' },
+      ],
     },
     {
       title: '更多',
-      path: '链接是可选的',
+      path: '/guide',
       // 可通过如下形式嵌套二级导航菜单，目前暂不支持更多层级嵌套：
       children: [
+        { title: '导航', path: '/guide' },
+        {
+          title: 'Gitee',
+          path: 'https://gitee.com/joe1207427994',
+        },
         { title: 'dumi', path: 'https://d.umijs.org' },
-        { title: '待定', path: '/guide' },
+        { title: 'English', path: '/english' },
       ],
     },
   ],

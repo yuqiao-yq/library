@@ -2,8 +2,14 @@
 title: React简介&基础使用
 order: 1
 toc: content
----
-
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /react
+  title: React
+  order: 3
 ---
 
 ## 一、React 简介

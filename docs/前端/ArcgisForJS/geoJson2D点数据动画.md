@@ -2,13 +2,15 @@
 title: geoJson 2D点数据动画
 order: 6
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /ArcGIS
+  title: ArcGIS
+  order: 6
 ---
-
-<!--
- * @Descripttion:
- * @Date: 2022-05-25 19:55:22
- * @LastEditTime: 2022-06-14 10:02:57
--->
 
 ## geoJson 2D 点数据动画
 

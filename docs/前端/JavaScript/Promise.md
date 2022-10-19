@@ -2,6 +2,14 @@
 title: Promise
 order: 13
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /JavaScript
+  title: JavaScript
+  order: 1
 ---
 
 ---

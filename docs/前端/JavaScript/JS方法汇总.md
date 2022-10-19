@@ -2,6 +2,14 @@
 title: JS方法汇总
 order: 14
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /JavaScript
+  title: JavaScript
+  order: 1
 ---
 
 ---

@@ -2,6 +2,14 @@
 title: Java语言基础
 order: 1
 toc: content
+nav:
+  path: /backend
+  title: 后端
+  order: 2
+group:
+  path: /Java
+  title: Java
+  order: 2
 ---
 
 ## 1. 标识符

@@ -2,6 +2,14 @@
 title: HTTP缓存
 order: 3
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /web
+  title: 网络
+  order: 7
 ---
 
 ## HTTP 缓存

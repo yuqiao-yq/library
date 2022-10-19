@@ -2,13 +2,15 @@
 title: geoJson点数据分色
 order: 7
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /ArcGIS
+  title: ArcGIS
+  order: 6
 ---
-
-<!--
- * @Descripttion:
- * @Date: 2022-05-29 23:06:30
- * @LastEditTime: 2022-06-14 10:03:04
--->
 
 ## geoJson 点数据分色
 

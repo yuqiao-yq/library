@@ -2,13 +2,15 @@
 title: geoJson 面数据转化为图层
 order: 5
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /ArcGIS
+  title: ArcGIS
+  order: 6
 ---
-
-<!--
-- @Descripttion:
-- @Date: 2022-05-25 19:55:22
- * @LastEditTime: 2022-06-14 10:03:24
-  -->
 
 ## geoJson 面数据转化为图层
 

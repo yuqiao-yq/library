@@ -2,6 +2,14 @@
 title: ArcGIS JS API简介
 order: 1
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /ArcGIS
+  title: ArcGIS
+  order: 6
 ---
 
 ## 什么是 ArcGIS JS API ?

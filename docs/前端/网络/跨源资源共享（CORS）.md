@@ -2,6 +2,14 @@
 title: 跨源资源共享（CORS）
 order: 5
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /web
+  title: 网络
+  order: 7
 ---
 
 ## 跨源资源共享（CORS）

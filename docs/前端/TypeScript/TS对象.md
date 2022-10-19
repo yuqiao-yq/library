@@ -2,6 +2,14 @@
 title: TS对象
 order: 6
 toc: content
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /TypeScript
+  title: TypeScript
+  order: 2
 ---
 
 ## 内置对象

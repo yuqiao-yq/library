@@ -2,8 +2,14 @@
 title: React函数式组件传值
 order: 6
 toc: content
----
-
+nav:
+  path: /frontend
+  title: 前端
+  order: 1
+group:
+  path: /react
+  title: React
+  order: 3
 ---
 
 ## 1.1 父传子
