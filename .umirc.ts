@@ -37,6 +37,7 @@ export default defineConfig({
         { title: 'JS', path: '/frontend/JavaScript' },
         { title: 'ArcGIS', path: '/frontend/ArcGIS' },
         { title: '网络', path: '/frontend/web' },
+        { title: '浏览器', path: '/frontend/browser' },
         { title: '组件', path: '/components' },
         { title: 'Tools', path: '/tools' },
       ],
