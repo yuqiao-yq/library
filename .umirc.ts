@@ -34,6 +34,7 @@ export default defineConfig({
       title: '前端',
       path: '/frontend',
       children: [
+        { title: 'CSS', path: '/frontend/CSS' },
         { title: 'JS', path: '/frontend/JavaScript' },
         { title: 'ArcGIS', path: '/frontend/ArcGIS' },
         { title: '网络', path: '/frontend/web' },
