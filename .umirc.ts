@@ -40,6 +40,7 @@ export default defineConfig({
         { title: '网络', path: '/frontend/web' },
         { title: '浏览器', path: '/frontend/browser' },
         { title: '组件', path: '/components' },
+        { title: '面试专栏', path: '/interview' },
         { title: 'Tools', path: '/tools' },
       ],
     },
