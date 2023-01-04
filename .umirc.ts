@@ -36,9 +36,10 @@ export default defineConfig({
       children: [
         { title: 'CSS', path: '/frontend/CSS' },
         { title: 'JS', path: '/frontend/JavaScript' },
+        { title: '网络', path: '/network' },
+        { title: '浏览器', path: '/browser' },
         { title: 'ArcGIS', path: '/frontend/ArcGIS' },
-        { title: '网络', path: '/frontend/web' },
-        { title: '浏览器', path: '/frontend/browser' },
+        { title: 'Webpack', path: '/webpack' },
         { title: '组件', path: '/components' },
         { title: '面试专栏', path: '/interview' },
         { title: 'Tools', path: '/tools' },
