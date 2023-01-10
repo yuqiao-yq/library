@@ -38,7 +38,7 @@ interface childProps {
 }
 
 export default function Child(props: childProps) {
-  const { showScreen } = props;
+  const { show } = props;
   <>
     <p style={{ show ? display: 'block' : display: 'none'}}> This is a child</p>
   <>
