@@ -1,5 +1,5 @@
 ---
-title: HTML-1
+title: HTML
 order: 1
 toc: content
 ---
