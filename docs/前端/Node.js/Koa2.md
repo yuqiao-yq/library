@@ -7,9 +7,9 @@ nav:
   title: 前端
   order: 1
 group:
-  path: /Node
+  path: /node
   title: Node
-  order: 5
+  order: 7
 ---
 
 ## KOA2 的使用

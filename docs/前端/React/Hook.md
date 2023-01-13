@@ -9,7 +9,7 @@ nav:
 group:
   path: /react
   title: React
-  order: 3
+  order: 6
 ---
 
 钩子函数只应该放在 React 函数的顶层代码中使用，不能放在条件语句、循环或者嵌套函数中。

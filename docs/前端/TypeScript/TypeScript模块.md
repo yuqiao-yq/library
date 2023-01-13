@@ -9,7 +9,7 @@ nav:
 group:
   path: /TypeScript
   title: TypeScript
-  order: 2
+  order: 4
 ---
 
 模块导出使用关键字 **export** 关键字

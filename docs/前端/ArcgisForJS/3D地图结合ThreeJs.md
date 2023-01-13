@@ -9,7 +9,7 @@ nav:
 group:
   path: /ArcGIS
   title: ArcGIS
-  order: 6
+  order: 8
 ---
 
 ## 3D 地图结合 Three.js

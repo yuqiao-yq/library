@@ -9,7 +9,7 @@ nav:
 group:
   path: /ArcGIS
   title: ArcGIS
-  order: 6
+  order: 8
 ---
 
 ## geoJson 点数据转化为图层

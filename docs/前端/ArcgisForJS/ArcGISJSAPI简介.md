@@ -9,7 +9,7 @@ nav:
 group:
   path: /ArcGIS
   title: ArcGIS
-  order: 6
+  order: 8
 ---
 
 ## 什么是 ArcGIS JS API ?

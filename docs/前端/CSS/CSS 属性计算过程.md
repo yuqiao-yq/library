@@ -7,7 +7,7 @@ nav:
   title: 前端
   order: 1
 group:
-  path: /CSS
+  path: /css
   title: CSS
   order: 1
 ---

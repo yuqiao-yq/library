@@ -9,7 +9,7 @@ nav:
 group:
   path: /JavaScript
   title: JavaScript
-  order: 1
+  order: 3
 ---
 
 BOM（浏览器对象模型）是一个用于访问浏览器和计算机屏幕的对象集合。我们可以通过全局对象 window 来访问这些对象。

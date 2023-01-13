@@ -9,7 +9,7 @@ nav:
 group:
   path: /TypeScript
   title: TypeScript
-  order: 2
+  order: 4
 ---
 
 ## 内置对象
