@@ -45,6 +45,7 @@ export default defineConfig({
         { title: '浏览器', path: '/browser' },
         { title: 'ArcGIS', path: '/frontend/ArcGIS' },
         { title: 'Webpack', path: '/webpack' },
+        { title: 'Flutter', path: '/flutter' },
         { title: '组件', path: '/components' },
         { title: '面试专栏', path: '/interview' },
         { title: 'Tools', path: '/tools' },
