@@ -3,10 +3,11 @@ const { resolve } = require('path');
 
 export default defineConfig({
   title: 'Library',
-  // favicon: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  favicon: 'https://img1.imgtp.com/2022/08/26/GNR9ILFr.jpeg',
+  favicon:
+    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+  // favicon: 'https://pic.peo.pw/a/2023/05/18/6465d7e2593a7.png',
   // logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo: 'https://img1.imgtp.com/2022/08/26/GNR9ILFr.jpeg',
+  logo: 'https://pic.peo.pw/a/2023/05/18/6465d819698d1.jpeg',
   outputPath: 'docs-dist',
   mode: 'site',
   hash: true,
