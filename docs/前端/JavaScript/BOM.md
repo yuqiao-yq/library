@@ -32,7 +32,9 @@ alert(window.age); //29
 sayAge(); //29
 window.sayAge(); //29
 
-// 我们在全局作用域中定义了一个变量age和一个函数sayAge()，它们被自动归在了window对象名下。于是，可以通过window.age访问变量age，可以通过window.sayAge()访问函数sayAge()。由于sayAge()存在于全局作用域中，因此this.age被映射到window.age，最终显示的仍然是正确的结果。
+// 我们在全局作用域中定义了一个变量age和一个函数sayAge()，它们被自动归在了window对象名下。
+// 于是，可以通过window.age访问变量age，可以通过window.sayAge()访问函数sayAge()。
+// 由于sayAge()存在于全局作用域中，因此this.age被映射到window.age，最终显示的仍然是正确的结果。
 ```
 
 抛开全局变量会成为 window 对象的属性不谈，定义全局变量与在 window 对象上直接定义属性还是有一点差别：全局变量不能通过 delete 操作符删除，而直接在 window 对象上的定义的属性可以。
@@ -50,7 +52,10 @@ delete window.color; //returns true
 alert(window.age); //29
 alert(window.color); //undefined
 
-// 使用var语句添加的window属性有一个名为[[Configurable]]的特性，这个特性的值被设置为false，因此这样定义的属性不可以通过delete操作符删除。IE8及更早版本在遇到使用delete删除window属性的语句时，不管该属性最初是如何创建的，都会抛出错误，以示警告。IE9及更高版本不会抛出错误。
+// 使用var语句添加的window属性有一个名为[[Configurable]]的特性，这个特性的值被设置为false，
+// 因此这样定义的属性不可以通过delete操作符删除。
+// IE8及更早版本在遇到使用delete删除window属性的语句时，不管该属性最初是如何创建的，都会抛出错误，以示警告。
+// IE9及更高版本不会抛出错误。
 ```
 
 尝试访问未声明的变量会抛出错误，但是通过查询 window 对象，可以知道某个可能未声明的变量是否存在。
@@ -82,7 +87,9 @@ var newValue = window.oldValue; // newValue的值是undefined
 </html>
 
 <!--
-以上代码创建了一个框架集，其中一个框架居上，两个框架居下。对这个例子而言，可以通过window.frames[0]或者window.frames["topFrame"]来引用上方的框架。最好使用top而非window来引用这些框架（例如，通过top.frames[0]）
+以上代码创建了一个框架集，其中一个框架居上，两个框架居下。
+对这个例子而言，可以通过window.frames[0]或者window.frames["topFrame"]来引用上方的框架。
+最好使用top而非window来引用这些框架（例如，通过top.frames[0]）
 -->
 ```
 
@@ -119,7 +126,9 @@ var newValue = window.oldValue; // newValue的值是undefined
     </frameset>
 </html>
 
-浏览器在加载完第一个框架集以后，会继续将第二个框架集加载到rightFrame中。如果代码位于redFrame（或blueFrame）中，那么parent对象指向的就是rightFrame。可是，如果代码位于topFrame中，则parent指向的是top，因为topFrame的直接上层框架就是最外层框架。
+浏览器在加载完第一个框架集以后，会继续将第二个框架集加载到rightFrame中。
+如果代码位于redFrame（或blueFrame）中，那么parent对象指向的就是rightFrame。
+可是，如果代码位于topFrame中，则parent指向的是top，因为topFrame的直接上层框架就是最外层框架。
 
 ```
 
@@ -143,7 +152,8 @@ var newValue = window.oldValue; // newValue的值是undefined
 var leftPos = typeof window.screenLeft == 'number' ? window.screenLeft : window.screenX;
 var topPos = typeof window.screenTop == 'number' ? window.screenTop : window.screenY;
 
-// 这个例子运用二元操作符首先确定screenLeft和screenTop属性是否存在，如果是（在IE、Safari、Opera和Chrome中），则取得这两个属性的值。如果不存在（在Firefox中），则取得screenX和screenY的值。
+// 这个例子运用二元操作符首先确定screenLeft和screenTop属性是否存在，如果是（在IE、Safari、Opera和Chrome中），则取得这两个属性的值。
+// 如果不存在（在Firefox中），则取得screenX和screenY的值。
 ```
 
 在使用这些值的过程中，还必须注意一些小问题。在 IE、Opera 和 Chrome 中，`screenLeft`和 `screenTop`中保存的是从屏幕左边和上边到由 window 对象表示的页面可见区域的距离。换句话说，如果 window 对象是最外层对象，而且浏览器窗口紧贴屏幕最上端——即 y 轴坐标为 0，那么 `screenTop`的值就是位于页面可见区域上方的浏览器工具栏的像素高度。但是，在 Firefox 和 Safari 中，`screenY`或 `screenTop`中保存的是整个浏览器窗口相对于屏幕的坐标值，即在窗口的 y 轴坐标为 0 时返回 0。
@@ -196,7 +206,10 @@ if (typeof pageWidth != 'number') {
   }
 }
 
-// 在以上代码中，我们首先将window.innerWidth和window.innerHeight的值分别赋给了pageWidth和pageHeight。然后检查pageWidth中保存的是不是一个数值；如果不是，则通过检查document.compatMode来确定页面是否处于标准模式。如果是，则分别使用document.documentElement.clientWidth和document.documentElement.clientHeight的值。否则，就使用document.body.clientWidth和document.body.clientHeight的值。
+// 在以上代码中，我们首先将window.innerWidth和window.innerHeight的值分别赋给了pageWidth和pageHeight。
+// 然后检查pageWidth中保存的是不是一个数值；如果不是，则通过检查document.compatMode来确定页面是否处于标准模式。
+// 如果是，则分别使用document.documentElement.clientWidth和document.documentElement.clientHeight的值。
+// 否则，就使用document.body.clientWidth和document.body.clientHeight的值。
 ```
 
 对于移动设备，window.innerWidth 和 window.innerHeight 保存着可见视口，也就是屏幕上可见页面区域的大小。移动 IE 浏览器不支持这些属性，但通过 document.documentElement.clientWidth 和 document.documentElement.clientHeihgt 提供了相同的信息。随着页面的缩放，这些值也会相应变化。
@@ -233,7 +246,9 @@ window.open("http://www.wrox.com/", topFrame");
 
 // 等同于< a href="http://www.wrox.com" target="topFrame"></a>
 
-// 调用这行代码，就如同用户单击了href属性为http://www.wrox.com/，target属性为"topFrame"的链接。如果有一个名叫"topFrame"的窗口或者框架，就会在该窗口或框架加载这个URL；否则，就会创建一个新窗口并将其命名为"topFrame"。此外，第二个参数也可以是下列任何一个特殊的窗口名称：_self、_parent、_top或_blank。
+// 调用这行代码，就如同用户单击了href属性为http://www.wrox.com/，target属性为"topFrame"的链接。
+// 如果有一个名叫"topFrame"的窗口或者框架，就会在该窗口或框架加载这个URL；否则，就会创建一个新窗口并将其命名为"topFrame"。
+// 此外，第二个参数也可以是下列任何一个特殊的窗口名称：_self、_parent、_top或_blank。
 ```
 
 #### 1. 弹出窗口
@@ -456,7 +471,10 @@ function incrementNumber() {
 
 setTimeout(incrementNumber, 500);
 
-在使用超时调用时，没有必要跟踪超时调用ID，因为每次执行代码之后，如果不再设置另一次超时调用，调用就会自行停止。一般认为，使用超时调用来模拟间歇调用的是一种最佳模式。在开发环境下，很少使用真正的间歇调用，原因是后一个间歇调用可能会在前一个间歇调用结束之前启动。而像前面示例中那样使用超时调用，则完全可以避免这一点。所以，最好不要使用间歇调用。
+在使用超时调用时，没有必要跟踪超时调用ID，因为每次执行代码之后，如果不再设置另一次超时调用，调用就会自行停止。
+一般认为，使用超时调用来模拟间歇调用的是一种最佳模式。
+在开发环境下，很少使用真正的间歇调用，原因是后一个间歇调用可能会在前一个间歇调用结束之前启动。而像前面示例中那样使用超时调用，则完全可以避免这一点。
+所以，最好不要使用间歇调用。
 ```
 
 ### 1.7 系统对话框
@@ -476,12 +494,15 @@ setTimeout(incrementNumber, 500);
 为了确定用户是单击了 OK 还是 Cancel，可以检查 confirm()方法返回的布尔值：true 表示单击了 OK，false 表示单击了 Cancel 或单击了右上角的 X 按钮。
 
 ```js
-if (confirm("Are you sure?")) {
-    alert("I'm so glad you're sure! ");
+if (confirm('Are you sure?')) {
+  alert("I'm so glad you're sure! ");
 } else {
-    alert("I'm sorry to hear you're not sure. ");
+  alert("I'm sorry to hear you're not sure. ");
 }
-在这个例子中，第一行代码（if条件语句）会向用户显示一个确认对话框。如果用户单击了OK，则通过一个警告框向用户显示消息I’m so glad you’ re sure! 。如果用户单击的是Cancel按钮，则通过警告框显示I’m sorry to hear you’re not sure.。这种模式经常在用户想要执行删除操作的时候使用，例如删除电子邮件。
+// 在这个例子中，第一行代码（if条件语句）会向用户显示一个确认对话框。
+// 如果用户单击了OK，则通过一个警告框向用户显示消息I’m so glad you’ re sure! 。
+// 如果用户单击的是Cancel按钮，则通过警告框显示I’m sorry to hear you’re not sure.。
+// 这种模式经常在用户想要执行删除操作的时候使用，例如删除电子邮件。
 ```
 
 #### `prompt()`
@@ -512,7 +533,8 @@ window.print();
 //显示“查找”对话框
 window.find();
 
-这两个方法同样不会就用户在对话框中的操作给出任何信息，因此它们的用处有限。另外，既然这两个对话框是异步显示的，那么Chrome的对话框计数器就不会将它们计算在内，所以它们也不会受用户禁用后续对话框显示的影响。
+// 这两个方法同样不会就用户在对话框中的操作给出任何信息，因此它们的用处有限。
+// 另外，既然这两个对话框是异步显示的，那么Chrome的对话框计数器就不会将它们计算在内，所以它们也不会受用户禁用后续对话框显示的影响。
 ```
 
 ## 2. location 对象
