@@ -251,3 +251,149 @@ module.exports = function (content) {
 ```
 
 ### 手写 babel-loader
+
+作用：编译 js 代码，将 ES6+语法编译成 ES5-语法。
+
+- 下载依赖
+
+```js
+npm i @babel/core @babel/preset-env -D
+```
+
+- loaders/babel-loader/index.js
+
+```js
+const schema = require('./schema.json');
+const babel = require('@babel/core');
+
+module.exports = function (content) {
+  const options = this.getOptions(schema);
+  // 使用异步loader
+  const callback = this.async();
+  // 使用babel对js代码进行编译
+  babel.transform(content, options, function (err, result) {
+    callback(err, result.code);
+  });
+};
+```
+
+- loaders/banner-loader/schema.json
+
+```js
+{
+  "type": "object",
+  "properties": {
+    "presets": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
+```
+
+### 手写 file-loader
+
+作用：将文件原封不动输出出去
+
+- 下载包
+
+```js
+npm i loader-utils -D
+```
+
+- loaders/file-loader.js
+
+```js
+const loaderUtils = require('loader-utils');
+
+function fileLoader(content) {
+  // 根据文件内容生产一个新的文件名称
+  const filename = loaderUtils.interpolateName(this, '[hash].[ext]', {
+    content,
+  });
+  // 输出文件
+  this.emitFile(filename, content);
+  // 暴露出去，给js引用。
+  // 记得加上''
+  return `export default '${filename}'`;
+}
+
+// loader 解决的是二进制的内容
+// 图片是 Buffer 数据
+fileLoader.raw = true;
+
+module.exports = fileLoader;
+```
+
+- loader 配置
+
+```js
+{
+  test: /\.(png|jpe?g|gif)$/,
+  loader: "./loaders/file-loader.js",
+  type: "javascript/auto", // 解决图片重复打包问题
+},
+```
+
+- 手写 style-loader
+
+作用：动态创建 style 标签，插入 js 中的样式代码，使样式生效。
+
+- loaders/style-loader.js
+
+```js
+const styleLoader = () => {};
+
+styleLoader.pitch = function (remainingRequest) {
+  /*
+    remainingRequest: C:\Users\86176\Desktop\source\node_modules\css-loader\dist\cjs.js!C:\Users\86176\Desktop\source\src\css\index.css
+      这里是inline loader用法，代表后面还有一个css-loader等待处理
+
+    最终我们需要将remainingRequest中的路径转化成相对路径，webpack才能处理
+      希望得到：../../node_modules/css-loader/dist/cjs.js!./index.css
+
+    所以：需要将绝对路径转化成相对路径
+    要求：
+      1. 必须是相对路径
+      2. 相对路径必须以 ./ 或 ../ 开头
+      3. 相对路径的路径分隔符必须是 / ，不能是 \
+  */
+  const relativeRequest = remainingRequest
+    .split('!')
+    .map((part) => {
+      // 将路径转化为相对路径
+      const relativePath = this.utils.contextify(this.context, part);
+      return relativePath;
+    })
+    .join('!');
+
+  /*
+    !!${relativeRequest} 
+      relativeRequest：../../node_modules/css-loader/dist/cjs.js!./index.css
+      relativeRequest是inline loader用法，代表要处理的index.css资源, 使用css-loader处理
+      !!代表禁用所有配置的loader，只使用inline loader。（也就是外面我们style-loader和css-loader）,它们被禁用了，只是用我们指定的inline loader，也就是css-loader
+
+    import style from "!!${relativeRequest}"
+      引入css-loader处理后的css文件
+      为什么需要css-loader处理css文件，不是我们直接读取css文件使用呢？
+      因为可能存在@import导入css语法，这些语法就要通过css-loader解析才能变成一个css文件，否则我们引入的css资源会缺少
+    const styleEl = document.createElement('style')
+      动态创建style标签
+    styleEl.innerHTML = style
+      将style标签内容设置为处理后的css代码
+    document.head.appendChild(styleEl)
+      添加到head中生效
+  */
+  const script = `
+    import style from "!!${relativeRequest}"
+    const styleEl = document.createElement('style')
+    styleEl.innerHTML = style
+    document.head.appendChild(styleEl)
+  `;
+
+  // style-loader是第一个loader, 由于return导致熔断，所以其他loader不执行了（不管是normal还是pitch）
+  return script;
+};
+
+module.exports = styleLoader;
+```
