@@ -56,6 +56,7 @@ export default defineConfig({
       title: '后端',
       path: '/backend',
       children: [
+        { title: 'C++', path: '/backend/c' },
         { title: 'SQL', path: '/backend/sql' },
         { title: 'Java', path: '/backend/Java' },
         { title: 'Python', path: '/backend/Python' },
