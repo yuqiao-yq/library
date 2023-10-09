@@ -1,6 +1,6 @@
 ---
 title: Koa2
-order: 4
+order:
 toc: content
 nav:
   path: /frontend
