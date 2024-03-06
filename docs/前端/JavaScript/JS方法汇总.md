@@ -1338,6 +1338,24 @@ var sum = result.reduce(function (prev, cur) {
 console.log(sum); //60
 ```
 
+### 复制对象
+
+```js
+const obj = { a: 'a', b: 'b', c: 'c' };
+
+const newObj = { ...obj };
+```
+
+### 复制对象并去掉部分属性
+
+```js
+// const obj = {a: 'a', b: 'b', c: 'c'};
+
+const obj = { a, ...newObj };
+
+// 也可用 delete newObj.a
+```
+
 ## 数组去重
 
 ### 基本数组去重
