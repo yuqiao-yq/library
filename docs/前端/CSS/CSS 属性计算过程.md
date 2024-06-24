@@ -14,25 +14,7 @@ group:
 
 # CSS 属性计算过程
 
-你是否了解 CSS 的属性计算过程呢？
-
-有的同学可能会讲，CSS 属性我倒是知道，例如：
-
-```css
-p {
-  color: red;
-}
-```
-
-上面的 CSS 代码中，p 是元素选择器，color 就是其中的一个 CSS 属性。
-
-但是要说 CSS 属性的计算过程，还真的不是很清楚。
-
-没关系，通过此篇文章，能够让你彻底明白什么是 CSS 属性的计算流程。
-
-<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-060434.png" alt="image-20220813140434032" style="zoom:50%;" />
-
-首先，不知道你有没有考虑过这样的一个问题，假设在 HTML 中有这么一段代码：
+假设在 HTML 中有这么一段代码：
 
 ```html
 <body>
@@ -48,9 +30,9 @@ p {
 
 那么问题来了，我们这个 h1 元素上面除了有默认字体大小、默认颜色等属性以外，究竟还有哪些属性呢？
 
-<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-014216.png" alt="image-20220815094215982" style="zoom:30%;" />
+<!-- <img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-014216.png" alt="image-20220815094215982" style="zoom:30%;" /> -->
 
-答案是**该元素上面会有 CSS 所有的属性。**你可以打开浏览器的开发者面板，选择【元素】，切换到【计算样式】，之后勾选【全部显示】，此时你就能看到在此 h1 上面所有 CSS 属性对应的值。
+答案是 **该元素上面会有 CSS 所有的属性。** 你可以打开浏览器的开发者面板，选择【元素】，切换到【计算样式】，之后勾选【全部显示】，此时你就能看到在此 h1 上面所有 CSS 属性对应的值。
 
 ![image-20220813141516153](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-061516.png)
 
@@ -62,11 +44,11 @@ p {
 }
 ```
 
-这往往会给我们造成一种错觉，认为该 p 元素上面就只有 color 属性。而真实的情况确是，任何一个 HTML 元素，都有一套完整的 CSS 样式，只不过你没有书写的样式，**大概率可能**会使用其默认值。例如上图中 h1 一个样式都没有设置，全部都用的默认值。
+这往往会给我们造成一种错觉，认为该 `p` 元素上面就只有 `color` 属性。而真实的情况确是，任何一个 `HTML` 元素，都有一套完整的 `CSS` 样式，只不过你没有书写的样式，**大概率可能** 会使用其默认值。例如上图中 `h1` 一个样式都没有设置，全部都用的默认值。
 
 但是注意，我这里强调的是“大概率可能”，难道还有我们“没有设置值，但是不使用默认值”的情况么？
 
-<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-014459.png" alt="image-20220815094458940" style="zoom:25%;" />
+<!-- <img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-014459.png" alt="image-20220815094458940" style="zoom:25%;" /> -->
 
 嗯，确实有的，所以我才强调你要了解“CSS 属性的计算过程”。
 
@@ -115,7 +97,7 @@ p {
 
 那么问题来了，咱们的样式表的源究竟有几种呢？
 
-<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-23-100047.png" alt="image-20220823180047075" style="zoom:40%;" />
+<!-- <img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-23-100047.png" alt="image-20220823180047075" style="zoom:40%;" /> -->
 
 整体来讲有三种来源：
 
@@ -171,6 +153,13 @@ h1 {
 <img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2021-09-16-071546.png" alt="image-20210916151546500" style="zoom: 40%;" />
 
 可以看到，落败的作者样式在 _Elements>Styles_ 中会被划掉。
+
+一个选择器具有的专用性的量可以用四种不同的值（或组件）来衡量的，它们可以被认为是千位，百位，十位和个位，在四个列中的四个简单数字：
+
+- 千位：如果声明是在 style 属性中该列加 1 分（这样的声明没有选择器，所以它们的专用性总是 1000）否则为 0。
+- 百位：在整个选择器中每包含一个 ID 选择器就在该列中加 1 分。
+- 十位：在整个选择器中每包含一个类选择器、属性选择器、或者伪类就在该列中加 1 分。
+- 个位：在整个选择器中每包含一个元素选择器或伪元素就在该列中加 1 分。注：通用选择器（\*）, 复合选择器（+、>、~、空格）和否定伪类（:not）在专用性中无影响
 
 有关选择器权重的计算方式，不清楚的同学，可以进入此传送门：*https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity*
 
@@ -267,7 +256,7 @@ div {
 
 好了，这就是关于 CSS 属性计算过程的所有知识了。
 
-<img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-154655.png" alt="image-20220814234654914" style="zoom:33%;" />
+<!-- <img src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-154655.png" alt="image-20220814234654914" style="zoom:33%;" /> -->
 
 ## 一道面试题
 
