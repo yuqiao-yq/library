@@ -82,6 +82,10 @@ export default defineConfig({
           title: 'Gitee',
           path: 'https://gitee.com/joe1207427994',
         },
+        {
+          title: 'github',
+          path: 'https://github.com/yuqiao-yq',
+        },
         { title: 'dumi', path: 'https://d.umijs.org' },
         { title: 'English', path: '/english' },
       ],
