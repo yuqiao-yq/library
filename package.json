@@ -52,6 +52,7 @@
     "less-loader": "^12.2.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
+    "typescript-plugin-css-modules": "^5.1.0",
     "yorkie": "^2.0.0"
   }
 }
