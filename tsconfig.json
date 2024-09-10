@@ -12,7 +12,16 @@
     "strict": true,
     "skipLibCheck": true,
     "declaration": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   }
   // "exclude": [
   //   "node_modules",
