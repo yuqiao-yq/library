@@ -13,6 +13,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
+    "noEmitOnError": false,
     "paths": {
       "@/*": ["src/*"]
     },
