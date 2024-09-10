@@ -26,6 +26,9 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "engines": {
+    "node": ">16.14.0 <17"
+  },
   "dependencies": {
     "antd": "^4.21.5",
     "echarts": "^5.3.3",
