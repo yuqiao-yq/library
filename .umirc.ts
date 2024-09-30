@@ -4,10 +4,12 @@ const { resolve } = require('path');
 export default defineConfig({
   title: 'Library',
   favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+    // 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+    'https://pic.imgdb.cn/item/66fa7206f21886ccc0bf6acb.png',
   // favicon: 'https://pic.peo.pw/a/2023/05/18/6465d7e2593a7.png',
   // logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo: 'https://pic.peo.pw/a/2023/05/18/6465d819698d1.jpeg',
+  // logo: 'https://pic.peo.pw/a/2023/05/18/6465d819698d1.jpeg',
+  logo: 'https://ice.frostsky.com/2024/09/30/e75c52ea9d92e0dd8fd28c9a65280fac.th.png',
   outputPath: 'docs-dist',
   mode: 'site',
   hash: true,
