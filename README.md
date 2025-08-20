@@ -14,7 +14,7 @@ Start the dev server,
 $ npm start
 ```
 
-Build documentation,
+Build documentation, build node 版本推荐 16
 
 ```bash
 $ npm run docs:build
